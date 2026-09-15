@@ -1,0 +1,37 @@
+<div class="scheduler">
+  <header class="scheduler__header">
+    <p class="scheduler__eyebrow">Clínica</p>
+    <h1>Agendamento de consultas</h1>
+    <p>Escolha uma data para consultar os horários disponíveis.</p>
+  </header>
+
+  <section class="scheduler__card">
+    <div class="scheduler__field">
+      <label for="appointment-date">Data da consulta</label>
+
+      <input
+        type="date"
+        id="appointment-date"
+        min="2026-01-01"
+        max="2026-12-31"
+      >
+    </div>
+
+    <div id="loading" class="scheduler__message" hidden>
+      Buscando horários disponíveis...
+    </div>
+
+    <div id="error-message" class="scheduler__message scheduler__message--error" hidden>
+    </div>
+
+    <div id="slots-section" hidden>
+      <h2>Horários disponíveis</h2>
+      <div id="available-slots" class="scheduler__slots"></div>
+    </div>
+
+    <div id="confirmation" class="scheduler__confirmation" hidden>
+      <strong>Agendamento confirmado!</strong>
+      <p id="confirmation-message"></p>
+    </div>
+  </section>
+</div>
