@@ -11,7 +11,9 @@ class Appointment < ApplicationRecord
 
     local_time = scheduled_at.in_time_zone
 
-    unless (8...18).cover?(local_time.hour) && local_time.min.zero?
+    unless (8...18).cover?(local_time.hour) &&
+           local_time.min.zero? &&
+           local_time.sec.zero?
       errors.add(:scheduled_at, "must be between 08:00 and 17:00, on the hour")
     end
   end
